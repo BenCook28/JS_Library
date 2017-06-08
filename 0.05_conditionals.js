@@ -51,8 +51,9 @@ if (age >= 35){
 	console.log("You can vote and run for senate.");
 } else if (age >= 18) {
 	console.log("You can vote.");
-} else("You're outta luck.");
-
+} else{
+	console.log("You're outta luck.");
+}
 var age = 300;
 if (age >= 67){
 	console.log("You can get full social security befefits until the program runs out of money.")
@@ -91,3 +92,4 @@ for(var i = 1; i <= 100; i++){
 	} else {
 		console.log(i);
 	}
+}
