@@ -1,0 +1,19 @@
+// ng stands for Angular directive.  ng-app dictates what part of an HTML view is an Angular app.
+//The document below demonstrates 2-way data binding.
+//The view is in the p tags.  The model is whatever someone types.  Angular passes this data to 
+//the view as controller.
+<!-- The ngModel directive binds an input,select, textarea (or custom form control) to a property on the scope using NgModelController, which is created and exposed by this directive. -->
+
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>TheNetNinja Angular Playlist</title>
+	<link href="Angular_Module_1.css" rel="stylesheet" type="text/css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+
+	<input type="text" ng-model="favFruit" placeholder="enter your favorite fruit" />
+	// this is the view
+	<p>Your favorite fruit is {{favFruit}}</p>
+</html>
