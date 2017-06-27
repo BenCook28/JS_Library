@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>TheNetNinja Angular Playlist</title>
+	<link href="Angular.css" rel="stylesheet" type="text/css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body ng-init="countries=['Chile', 'Bulgaria', 'Panama', 'Singapore']">
+<h1>ng-repeat</h1>
+	<!-- <input type="text" ng-model="favFruit" placeholder="enter your favorite fruit" />
+ -->
+<!-- Thanks to ng-repeat, I don't have to repeat code as shown below -->
+<!-- 	<ul>
+	<li>{{countries[0]}}</li>
+	<li>{{countries[1]}}</li>
+	<li>{{countries[2]}}</li>
+	<li>{{countries[3]}}</li>
+	</ul> 
+	Instead I can do the below:-->
+	<ul>
+	<li ng-repeat="country in countries">{{country}}</li>
+	</ul>
+</body>	
+</html>
