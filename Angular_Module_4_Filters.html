@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="myCountryApp">
+<head>
+	<title>Angular Modules</title>
+	<link href="Angular.css" rel="stylesheet" type="text/css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script type="text/javascript" src="app_filters.js"></script>
+</head>
+<body>
+	<!-- gets from the controller in app.js.
+	We have access to scope in the ng-controller section.
+	Scope binds the files together. -->
+	<div ng-controller="countryController">
+	<!-- creates a search bar -->
+		<input type="text" ng-model="search" />
+		<ul>
+		<!-- | means filter. ''s not to escape "", sorts alphabetically, minus sign for oposite direction sort, filter by the search variable above -->
+		<li ng-repeat="country in countries | orderBy: '-name' | filter: search">
+		<!-- display pay as currency -->
+			{{country.name}} - {{country.pay | currency}}
+		</li>
+		</ul>
+	</div>
+</body>	
+</html>
