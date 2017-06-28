@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="myCountryApp">
+<head>
+	<title>Angular Modules</title>
+	<link href="Angular.css" rel="stylesheet" type="text/css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script type="text/javascript" src="app_controllers.js"></script>
+</head>
+<body>
+	<!-- gets from the controller in app.js.
+	We have access to scope in the ng-controller section.
+	Scope binds the files together. -->
+	<div ng-controller="countryController">
+		<ul>
+		<li ng-repeat="country in countries">{{country}}</li>
+		</ul>
+	</div>
+</body>	
+</html>
