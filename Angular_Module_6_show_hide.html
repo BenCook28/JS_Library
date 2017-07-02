@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="myCountryApp">
+<head>
+	<title>Angular Modules</title>
+	<link href="Angular.css" rel="stylesheet" type="text/css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script type="text/javascript" src="app_show_hide.js"></script>
+</head>
+<body>
+	<header ng-include="'http://127.0.0.1:8887/Angular_Module_5_Header_ng-include.html'"></header>
+	<!-- CSS styling -->
+		<div class="content">
+		<div ng-controller="countryController">
+			<input type="text" ng-model="search" />
+			<ul>
+			<!-- if ng-show ="false", hides -->
+			<!-- filters by an object's property -->
+			<!-- ! in the show/hide filter returns only results with a property of false -->
+			<!-- ng-hide does the opposite of ng-show -->
+			<li ng-repeat="country in countries | orderBy: '-name' | filter: search" ng-show="country.contacts">
+				{{country.name}} - {{country.pay | currency}}
+			</li>
+			</ul>
+		</div>
+	</div>
+</body>	
+</html>
