@@ -1,3 +1,5 @@
+var myCountryApp = angular.module('myCountryApp', []);
+
 myCountryApp.controller('countryController', ['$scope', function($scope){
 
 	$scope.removeCountry = function(country){
@@ -11,7 +13,8 @@ myCountryApp.controller('countryController', ['$scope', function($scope){
 			corruption: $scope.newCountry.corruption,
 			//parseInt is a JS function to turn a string into an int.
 			pay: parseInt($scope.newCountry.pay),
-			contacts: true
+			contacts: true,
+			colorCode: "red"
 		});
 		//clear the form after we add a new country
 		$scope.newCountry.name = "";
