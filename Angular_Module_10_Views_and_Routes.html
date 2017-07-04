@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="myCountryApp">
+<head>
+	<title>Angular Modules</title>
+	<link href="Angular.css" rel="stylesheet" type="text/css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script type="text/javascript" src="lib\Angular-route.min.js"></script>
+	<script type="text/javascript" src="app_views_and_routes.js"></script>
+</head>
+	<body>
+		<header ng-include="'http://127.0.0.1:8887/Angular_Module_5_Header_ng-include.html'"></header>
+		<!-- I moved the content into directory.html in the views folder I created -->
+		<!-- Use ng-view to move content from views onto index.  ng-view can be a tag directive or an attribute. -->
+		<main ng-view></main>
+	</body>	
+</html>
