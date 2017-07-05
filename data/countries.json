@@ -1,0 +1,35 @@
+$scope.countries = [
+		{
+			"name": "Chile",
+			"corruption": "low",
+			"pay": 70000,
+			"contacts": true,
+			"colorCode": "lightgreen",
+			"thumb": "img/Chile.jpg"
+		}, 
+		{
+			"name": "Bulgaria",
+			"corruption": "high",
+			"pay": 14000,
+			"contacts": true,
+			"colorCode": "red",
+			"thumb": "img/Bulgaria.jpg"
+		},
+		{
+			"name": "Panama",
+			"corruption": "moderate",
+			"pay": 50000,
+			"contacts": false,
+			"colorCode": "lightyellow",
+			"thumb": "img/Panama.jpg"
+		},
+		{
+			"name": "Singapore",
+			"corruption": "low",
+			"pay": 60000,
+			"contacts": true,
+			"colorCode": "lightgreen",
+			"thumb": "img/Singapore.jpg"
+
+		}
+	];
