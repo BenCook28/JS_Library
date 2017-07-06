@@ -1,21 +1,23 @@
 <div class="content">
-				<!-- removed ng-controller since content is now  controlled by the countryController in app_views_and_routes.js -->
-					<button ng-click="order = 'name'">Order by Name</button>
-					<button ng-click="order = 'corruption'">Order by Corruption</button>
-					<input type="text" ng-model="search" placeholder="search for a country" />
-					<ul>
-						<li ng-repeat="country in countries | orderBy: order | filter: search" ng-show="country.contacts">
-							<img ng-src="{{country.thumb}}" style="margin: -12px 10px 0 0; float: left; width: 50px; height: 50px;" 
-								ng-show="country.thumb"/>
-							<h3>{{country.name}} - {{country.pay | currency}}</h3>
-							<div class="remove" ng-click="removeCountry(country)">x</div>
-							<span class="belt" style="background: {{country.colorCode}}">{{country.corruption}} corruption</span>
-						</li>
-					</ul>
-					<form ng-submit="addCountry()">
-						<input type="text" placeholder="name" ng-model="newCountry.name" />
-						<input type="text" placeholder="corruption" ng-model="newCountry.corruption" />
-						<input type="text" placeholder="pay" ng-model="newCountry.pay" />
-						<input type="submit" value="Add New Country" />
-					</form>
-				</div>
+	<button ng-click="order = 'name'">Order by Name</button>
+	<button ng-click="order = 'corruption'">Order by Corruption</button>
+	<input type="text" ng-model="search" placeholder="search for a country" />
+	<ul>
+		<li ng-repeat="country in countries | orderBy: order | filter: search" ng-show="country.contacts">
+			<img ng-src="{{country.thumb}}" style="margin: -12px 10px 0 0; float: left; width: 50px; height: 50px;" 
+				ng-show="country.thumb"/>
+			<h3>{{country.name}} - {{country.pay | currency}}</h3>
+			<div class="remove" ng-click="removeCountry(country)">x</div>
+			<span class="belt" style="background: {{country.colorCode}}">{{country.corruption}} corruption</span>
+		</li>
+	</ul>
+	<!-- added a custom directive below, used as an element -->
+	<!-- displays a random country -->
+	<country></country>
+	<form ng-submit="addCountry()">
+		<input type="text" placeholder="name" ng-model="newCountry.name" />
+		<input type="text" placeholder="corruption" ng-model="newCountry.corruption" />
+		<input type="text" placeholder="pay" ng-model="newCountry.pay" />
+		<input type="submit" value="Add New Country" />
+	</form>
+</div>
