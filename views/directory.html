@@ -2,7 +2,8 @@
 	<button ng-click="order = 'name'">Order by Name</button>
 	<button ng-click="order = 'corruption'">Order by Corruption</button>
 	<input type="text" ng-model="search" placeholder="search for a country" />
-	<ul>
+	<!-- making it possible to animate the below -->
+	<ul id="country-list">
 		<li ng-repeat="country in countries | orderBy: order | filter: search" ng-show="country.contacts">
 			<img ng-src="{{country.thumb}}" style="margin: -12px 10px 0 0; float: left; width: 50px; height: 50px;" 
 				ng-show="country.thumb"/>
@@ -11,8 +12,6 @@
 			<span class="belt" style="background: {{country.colorCode}}">{{country.corruption}} corruption</span>
 		</li>
 	</ul>
-	<!-- added a custom directive below, used as an element -->
-	<!-- displays a random country -->
 	<country></country>
 	<form ng-submit="addCountry()">
 		<input type="text" placeholder="name" ng-model="newCountry.name" />
