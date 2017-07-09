@@ -2,7 +2,6 @@
 	<button ng-click="order = 'name'">Order by Name</button>
 	<button ng-click="order = 'corruption'">Order by Corruption</button>
 	<input type="text" ng-model="search" placeholder="search for a country" />
-	<!-- making it possible to animate the below -->
 	<ul id="country-list">
 		<li ng-repeat="country in countries | orderBy: order | filter: search" ng-show="country.contacts">
 			<img ng-src="{{country.thumb}}" style="margin: -12px 10px 0 0; float: left; width: 50px; height: 50px;" 
@@ -15,8 +14,15 @@
 	<country></country>
 	<form ng-submit="addCountry()">
 		<input type="text" placeholder="name" ng-model="newCountry.name" />
-		<input type="text" placeholder="corruption" ng-model="newCountry.corruption" />
+		<select placeholder="corruption" ng-model="newCountry.corruption"> 
+			<option value="" disabled selected>corruption</option>
+			<option value="low">low
+			<option value="moderate">moderate
+			<option value="high">high
+		</select>
 		<input type="text" placeholder="pay" ng-model="newCountry.pay" />
 		<input type="submit" value="Add New Country" />
 	</form>
+	<!-- Add a button that staggers the removal of all countries on click -->
+	<a href="" ng-click="removeAll()">Remove All Countries</a>
 </div>
