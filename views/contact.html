@@ -1,5 +1,6 @@
 <div class="content">
-	<form name="contactForm" novalidate>
+	<!-- Added sendMessage in module 18 -->
+	<form name="contactForm" ng-submit="sendMessage()" novalidate>
 	<!-- all the fields are required, ng-model to use the data, demonstrates touched, untouched, pristine, dirty, valid, and invalid ng classes -->
 		<input type="text" placeholder="name" name="name" ng-model="contact.name" ng-required="true"/>
 		<!-- displays hints if form is touched and invalid -->
