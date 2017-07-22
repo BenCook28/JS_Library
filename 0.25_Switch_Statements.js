@@ -25,3 +25,4 @@ switch (new Date().getDay()) {
         day = "Saturday";
 }
 console.log(day);
+//I think of these as railroad switches which move trains onto different tracks
