@@ -13,5 +13,3 @@
 // Frequently, it’s defined inline as an anonymous function.
 
 // JavaScript is single-threaded, meaning that only one operation happens at a time.
-Understand the techniques that closures and higher order 
-functions allow us to use.
