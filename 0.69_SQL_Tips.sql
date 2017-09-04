@@ -150,3 +150,47 @@ CREATE TABLE Promotions
     category varchar(15)
     CONSTRAINT unique_name UNIQUE (name, category)
 );
+
+-- Value Constraints
+
+--References between two tables:
+--We singularize the table name followed by an _theColumnNameInTheOtherTable
+--This is called a foreign key, which references the primary key of another table.
+
+SELECT name, category
+FROM Promotions
+WHERE movie_id = 2;
+
+-- Foreign Key Constraint:
+CREATE TABLE Promotions
+(
+    id int PRIMARY KEY,
+    movie_id int REFERENCES movies(id) --Foreign key constraint here, the part in () is optional.
+    name varchar(50) NOT NULL,
+    category varchar(15)
+);
+
+-- Foreign Key as table constraint
+CREATE TABLE Promotions
+(
+    id int PRIMARY KEY,
+    movie_id int,
+    name varchar(50) NOT NULL,
+    category varchar(15),
+    FOREIGN KEY (movie_id) REFERENCES movies --Foreign key constraint here
+);
+
+-- Orphan Records: Records which reference rows in other tables that have been deleted.
+-- We delete the referencing row (promotion) before we can delete movie.
+
+-- Validating data insertion:
+-- The CHECK constraint validates info placed into a column.
+
+CREATE TABLE Movies
+(
+    id int PRIMARY KEY,
+    movie_id int,
+    title varchar(50) NOT NULL UNIQUE,
+    genre varchar(15),
+    duration int CHECK (duration > 0)
+);
