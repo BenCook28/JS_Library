@@ -55,3 +55,33 @@ ADD COLUMN ratings int;
 -- We drop columns as shown below:
 ALTER TABLE tableName
 DROP COLUMN ratings;
+
+-- Common agregate functions(counting)
+SELECT count(*) --column name could go inside
+FROM Movies;
+-- includes Null values in the count
+
+SELECT count(title) 
+FROM Movies;
+-- counts all rows without NULL values
+
+-- The four below only work if a column contains numbers
+-- We sum as shown below:
+SELECT sum(columnName)
+FROM tableName;
+
+-- We average as shown below:
+SELECT avg(columnName)
+FROM tableName;
+
+-- We find the largest value as shown below:
+SELECT max(columnName)
+FROM tableName;
+
+-- We find the smallest value as shown below:
+SELECT min(columnName)
+FROM tableName;
+
+-- We can use these in combination
+SELECT min(tickets), max(tickets)
+FROM tableName;
