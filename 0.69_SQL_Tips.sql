@@ -204,3 +204,8 @@ CREATE TABLE Movies
 -- columns: movie_id genre_id
 
 --IN (2, 3) instead of multiple OR statements
+
+-- Relationships
+--One-to-One
+--One-to-Many
+--Many-to-Many
