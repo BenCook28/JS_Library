@@ -22,3 +22,36 @@ WHERE id = 3 or 5;
 DELETE
 FROM movies
 WHERE id = 5;
+
+-- We create databases as shown below:
+CREATE DATABASE Chaplin Theaters;
+
+-- We get rid of databases as shown below:
+DROP DATABASE Chaplin Theaters;
+
+-- We add tables to databases as shown below:
+CREATE TABLE tableName
+(
+    column_1 datatype,
+    column_2 datatype
+);
+
+-- For example:
+CREATE TABLE movies
+(
+    id int,
+    title varchar(50),
+    genre varchar(15),
+    duration int
+);
+
+-- We drop tables as shown below:
+DROP TABLE tableName;
+
+-- We add columns to tables as shown below:
+ALTER TABLE tableName
+ADD COLUMN ratings int;
+
+-- We drop columns as shown below:
+ALTER TABLE tableName
+DROP COLUMN ratings;
