@@ -209,3 +209,18 @@ CREATE TABLE Movies
 --One-to-One
 --One-to-Many
 --Many-to-Many
+
+-- Inner Joins
+SELECT Movies.title, Reviews.review
+FROM Movies
+INNER JOIN Reviews
+ON Movies.id=Reviews.movie_id;
+
+-- Inner Join on Three Tables
+SELECT Movies.title, Genres.name
+FROM Movies
+INNER JOIN Genres
+ON Movies.id = Movies_Genres.movie_id;
+INNER JOIN Genres
+ON Movies_Genres.genre_id = Genres.id;
+WHERE Movies.title = 'Peter Pan';
