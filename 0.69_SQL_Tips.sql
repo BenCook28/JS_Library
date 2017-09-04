@@ -194,3 +194,13 @@ CREATE TABLE Movies
     genre varchar(15),
     duration int CHECK (duration > 0)
 );
+
+-- Normalization is reducing duplication in tables
+-- 1st normal: only one value in each column
+-- 2nd normal: no redundant data in each column
+
+-- Join Table
+-- Naming convention: Movies_Genre, the name of one table_name of other taple
+-- columns: movie_id genre_id
+
+--IN (2, 3) instead of multiple OR statements
