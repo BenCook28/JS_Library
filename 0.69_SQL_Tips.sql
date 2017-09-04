@@ -103,3 +103,50 @@ FROM Movies
 WHERE revenue >= 1000000
 GROUP BY genre
 HAVING count(*) > 1;
+
+--Identifying Constraints can prevent NULL values, ensure column values are unique, and provide aditional validations:
+
+--The NOT NULL column constraint ensures that values cannot be NULL as shown below:
+CREATE TABLE Promotions
+(
+    id int,
+    name varchar(50) NOT NULL,
+    category varchar(15)
+);
+
+-- Preventing duplicate values with UNIQUE constraint:
+CREATE TABLE Promotions
+(
+    id int,
+    name varchar(50) NOT NULL UNIQUE,
+    category varchar(15)
+);
+
+-- Assigning names to constraints with table constraints:
+CREATE TABLE Promotions
+(
+    id int,
+    name varchar(50) NOT NULL,
+    category varchar(15)
+    CONSTRAINT unique_name UNIQUE (columnName)
+);
+-- Except for NOT NULL every column constrain can be written as a table constraint
+
+-- Ensuring columns are unique:
+CREATE TABLE Promotions
+(
+    id int,
+    name varchar(50) NOT NULL,
+    category varchar(15)
+    CONSTRAINT unique_name UNIQUE (name, category)
+);
+
+--Ensuring primary key uniqueness and NOT NULL status
+--We can use the primary key constraint only once, but NOT NULL with UNIQUE more than once.
+CREATE TABLE Promotions
+(
+    id int PRIMARY KEY,
+    name varchar(50) NOT NULL,
+    category varchar(15)
+    CONSTRAINT unique_name UNIQUE (name, category)
+);
