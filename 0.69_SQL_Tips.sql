@@ -85,3 +85,21 @@ FROM tableName;
 -- We can use these in combination
 SELECT min(tickets), max(tickets)
 FROM tableName;
+
+-- Group BY Clause example:
+SELECT genre, sum(cost)
+FROM Movies
+GROUP BY genre;
+
+-- HAVING Clause example:
+SELECT genre, sum(cost), count(genre)
+FROM Movies
+WHERE ColumnName operator value -- optional
+GROUP BY genre
+HAVING count(*) > 1;
+
+SELECT genre, sum(cost), count(genre)
+FROM Movies
+WHERE revenue >= 1000000
+GROUP BY genre
+HAVING count(*) > 1;
