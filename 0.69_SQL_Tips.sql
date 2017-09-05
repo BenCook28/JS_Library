@@ -219,8 +219,30 @@ ON Movies.id=Reviews.movie_id;
 -- Inner Join on Three Tables
 SELECT Movies.title, Genres.name
 FROM Movies
-INNER JOIN Genres
+INNER JOIN Movies_Genres
 ON Movies.id = Movies_Genres.movie_id;
 INNER JOIN Genres
 ON Movies_Genres.genre_id = Genres.id;
 WHERE Movies.title = 'Peter Pan';
+
+-- Aliases
+SELECT Movies.title AS "Weekly Movies", Reviews.review AS reviews --AS is optional
+FROM Movies
+INNER JOIN Reviews
+ON Movies.id=Reviews.movie_id;
+-- We need "" to capitalize or use spaces in aliases.
+
+--Table Aliases
+SELECT m.title, r.review
+FROM Movies m
+INNER JOIN Reviews r
+ON m.id=r.movie_id
+ORDER BY m.title;
+
+SELECT m.title, g.name
+FROM Movies m
+INNER JOIN Movies_Genres mg
+ON m.id = mg.movie_id;
+INNER JOIN Genres g
+ON mg.genre_id = g.id;
+WHERE m.title = 'Peter Pan';
