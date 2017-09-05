@@ -261,3 +261,22 @@ SELECT *
 FROM Movies
 RIGHT OUTER JOIN Reviews
 ON Movies.id=Reviews.movie_id;
+
+-- Subqueries
+SELECT SUM(sales)
+FROM Movies
+WHERE id IN -- We could use NOT IN to get everything not in the subquery.
+(
+    SELECT movie_id
+    FROM Promotions
+    WHERE category = 'Non-cash';
+);
+
+-- Correlated Subqueries
+SELECT *
+FROM Movies
+WHERE duration >
+(
+    SELECT avg(duration)
+    FROM Movies
+);
