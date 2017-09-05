@@ -246,3 +246,18 @@ ON m.id = mg.movie_id;
 INNER JOIN Genres g
 ON mg.genre_id = g.id;
 WHERE m.title = 'Peter Pan';
+
+-- Outer Joins
+-- For example, we use outer joins to get all movies with optional reviews.
+
+-- Left Outer Join example:
+SELECT *
+FROM Movies
+LEFT OUTER JOIN Reviews
+ON Movies.id=Reviews.movie_id;
+
+-- Right Outer Join example:
+SELECT *
+FROM Movies
+RIGHT OUTER JOIN Reviews
+ON Movies.id=Reviews.movie_id;
