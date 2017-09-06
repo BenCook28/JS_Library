@@ -27,3 +27,7 @@ $ // at end of line
 ^w+$ // returns one word per line lines
 \b\w{4}\b // returns four letter words
 \b\w{4, 9}\b // returns four to nine letter words
+
+// Character classes
+// Go in []s.
+// \ escapes things like . (dot)
