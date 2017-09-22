@@ -31,4 +31,3 @@ class Program
 // The Console.ReadLine method reads user input from the 
 // console line and returns it as a string.
 
-// I'm at 3:40 seconds in the C# video.
