@@ -12,3 +12,7 @@ static void Main(string[] args)
 
     Console.WriteLine(favNum + " is a good number.");
 }
+
+// Environment.Exit(0) immediately exits the program.
+// The zero means the application will close saying it ran 
+// successfully.
