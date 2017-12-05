@@ -9,3 +9,5 @@
 
 // Also, this sets upsteam:
 // git push -u origin my_branch
+
+//this is to test whether -u worked
