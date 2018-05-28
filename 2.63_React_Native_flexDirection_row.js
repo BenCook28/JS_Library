@@ -1,0 +1,1 @@
+// To allign content horizontally, we can use flexDirection: 'row'
